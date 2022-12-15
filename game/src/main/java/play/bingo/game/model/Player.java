@@ -10,43 +10,30 @@ public class Player {
     private Long id;
 
     private String name;
-
     @OneToOne
-    @JoinColumn(name = "bingoCard_id", referencedColumnName = "id")
+    @JoinColumn(name = "BingoCard_id", referencedColumnName = "id")
     private BingoCard bingoCard;
-
-    public Player() {
-    }
-
-    public Player(Long id, String name) {
-        this.id = id;
+    public Player(String name) {
         this.name = name;
+        this.bingoCard = new BingoCard();
     }
-
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public BingoCard getBingoCard() {
         return bingoCard;
     }
-
     public void setBingoCard(BingoCard bingoCard) {
         this.bingoCard = bingoCard;
     }
-
     
-
 }

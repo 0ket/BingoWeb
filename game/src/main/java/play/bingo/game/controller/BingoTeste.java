@@ -1,12 +1,12 @@
 package play.bingo.game.controller;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-
+import play.bingo.game.service.BingoDrawService;
 
 @Controller
 public class BingoTeste {
@@ -14,9 +14,9 @@ public class BingoTeste {
     @Autowired
     BingoDrawService bingoDrawService;
     
-    @RequestMapping("/")
-    public String viewString(Model model) {
-    
-        return "home";
+    @GetMapping("/")
+    public ModelAndView viewString() {
+        ModelAndView home = new ModelAndView("home");
+        return home;
     }
 }

@@ -1,27 +1,26 @@
 package play.bingo.game.model;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Entity
+@Entity 
 public class BingoCard {
 
-
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private List<Integer> numbers;
 
-    @OneToOne
-    @JoinColumn(name = "player_id", referencedColumnName = "id")
-    private Player player;
-
-    public BingoCard(Player player) {
+    public BingoCard() {
 
         this.numbers = new ArrayList<Integer>();
-        this.player = player;
         startCard();
     }
 

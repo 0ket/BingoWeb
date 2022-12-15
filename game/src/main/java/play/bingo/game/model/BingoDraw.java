@@ -1,20 +1,34 @@
 package play.bingo.game.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 
 @Entity
-public class BindoDraw {
+public class BingoDraw {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @ManyToMany()
+    @JoinColumn(name = "player_id", referencedColumnName ="id")
     private List<Player> players;
+    @ManyToMany
+    @JoinColumn(name = "bingocard_id", referencedColumnName ="id")
     private List<BingoCard> cards;
+
     private List<Integer> drawNumbers;
+    
     private String winner;
 
-    public BindoDraw() {
+    public BingoDraw() {
         this.players = new ArrayList<Player>();
         this.cards = new ArrayList<BingoCard>();
         this.drawNumbers = new ArrayList<Integer>();
@@ -38,13 +52,13 @@ public class BindoDraw {
     public void setWinner(String winner) {
         this.winner = winner;
     }
-    public ArrayList<Player> getPlayers() {
-        return players;
+    public List<Player> getPlayers() {
+        return this.players;
     }
-    public ArrayList<BingoCard> getCards() {
+    public List<BingoCard> getCards() {
         return cards;
     }
-    public ArrayList<Integer> getDrawNumbers() {
+    public List<Integer> getDrawNumbers() {
         return drawNumbers;
     }
     public String getWinner() {

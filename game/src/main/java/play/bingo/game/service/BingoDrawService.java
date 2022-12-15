@@ -1,5 +1,13 @@
 package play.bingo.game.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import play.bingo.game.model.BingoDraw;
+import play.bingo.game.repository.BingoDrawRepository;
+@Service
 public class BingoDrawService {
 
     @Autowired
