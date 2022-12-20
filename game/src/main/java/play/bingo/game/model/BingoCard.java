@@ -2,6 +2,7 @@ package play.bingo.game.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 import jakarta.persistence.Entity;
@@ -21,7 +22,6 @@ public class BingoCard {
     public BingoCard() {
 
         this.numbers = new ArrayList<Integer>();
-        startCard();
     }
 
 
@@ -76,5 +76,18 @@ public class BingoCard {
 
     public void setNumbers(List<Integer> numbers) {
         this.numbers = numbers;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        BingoCard bingoCard = (BingoCard) object;
+        return java.util.Objects.equals(id, bingoCard.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id);
     }
 }

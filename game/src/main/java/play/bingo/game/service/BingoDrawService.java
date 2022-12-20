@@ -13,6 +13,8 @@ public class BingoDrawService {
     @Autowired
     private BingoDrawRepository BingoDrawRepository;
 
+    
+
     public BingoDraw saveBingoDraw(BingoDraw bingoDraw){
         return BingoDrawRepository.save(bingoDraw);
     }

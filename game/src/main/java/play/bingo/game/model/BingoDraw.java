@@ -2,6 +2,7 @@ package play.bingo.game.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -64,6 +65,17 @@ public class BingoDraw {
     public String getWinner() {
         return winner;
     }
-    
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        BingoDraw bingoDraw = (BingoDraw) object;
+        return java.util.Objects.equals(id, bingoDraw.id);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
 
 }
