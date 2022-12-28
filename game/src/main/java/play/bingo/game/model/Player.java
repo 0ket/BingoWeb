@@ -21,6 +21,9 @@ public class Player{
     @OneToOne
     @JoinColumn(name = "BingoCard_id", referencedColumnName = "id")
     private BingoCard bingoCard;
+    
+    public Player() {
+    }
     public Player(String name) {
         this.name = name;
         this.bingoCard = new BingoCard();

@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import play.bingo.game.GameApplication;
+import play.bingo.game.model.Player;
 
 @AutoConfigureMockMvc
 @SpringBootTest( 
@@ -21,6 +22,8 @@ public class PlayerIntegrationTest {
 
     @Test
     void TestPlayer(){
+        Player player = new Player("Ketleen");
+        playerRepository.save(player);
         assertThat(playerRepository).isNotNull();
     }
 

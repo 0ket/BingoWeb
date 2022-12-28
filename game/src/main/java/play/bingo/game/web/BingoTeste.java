@@ -1,4 +1,4 @@
-package play.bingo.game.controller;
+package play.bingo.game.web;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ public class BingoTeste {
     @Autowired
     BingoDrawService bingoDrawService;
     
-    @GetMapping("/")
+    @GetMapping("/test")
     public ModelAndView viewString() {
         ModelAndView home = new ModelAndView("home");
         return home;

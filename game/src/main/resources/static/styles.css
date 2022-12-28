@@ -1,0 +1,25 @@
+
+.home{
+    background-color: rgb(138, 173, 238);
+}
+.bingopng div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+}
+.bingopng img{
+    width: 50%;
+}
+
+.botoes a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top:  1%;
+    margin-bottom: 1%;
+}
